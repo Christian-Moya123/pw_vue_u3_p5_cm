@@ -3,7 +3,7 @@
         Componente Estudiante
     </h1>
     <div class="ver">
-        <input v-model="id" type="text" />
+        <input v-model="id" type="text" placeholder="id"/>
         <button @click="consultarPorId">Consultar</button>
         <label for="nombre">Nombre:</label>
         <input v-model="nombre" type="text" id="nombre" class="form-control" placeholder="Nombre" />
@@ -45,12 +45,14 @@
         <input v-model="direccion" type="text" placeholder="Dirección" />
         <input v-model="telefono" type="tel" placeholder="Teléfono" />
         <button @click="insertar">Insertar</button>
+        <button @click="actualizar">Actualizar</button>
+        <button @click="eliminar">Eliminar</button>
 
     </div>
 </template>
 
 <script>
-import { consultarEstudainteFachada, insertarFachada } from "../helpers/clienteEstudiante"
+import { consultarEstudainteFachada, insertarFachada, actualizarFachadaEstudiante, eliminarFachada } from "../helpers/clienteEstudiante"
 
 export default {
     data() {
@@ -102,20 +104,38 @@ export default {
 
             const data = await insertarFachada(estuBody);
             console.log(data)
+        },
+
+        async actualizar() {
+            const body = {
+                nombre: this.nombre,
+                apellido: this.apellido,
+                genero: this.genero,
+                fechaNacimiento: this.fechaNacimiento,
+                email: this.email,
+                carrera: this.carrera,
+                promedio: this.promedio,
+                direccion: this.direccion,
+                telefono: this.telefono
+            };
+
+            await actualizarFachadaEstudiante(this.id, body);
+        },
+
+        async eliminar(){
+            await eliminarFachada(this.id);
         }
 
     }
 }
 </script>
 <style scoped>
-
-
 .ver {
-  margin-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 .insertar {
-  margin-top: 20px;
+    margin-top: 20px;
 }
 
 .label {
