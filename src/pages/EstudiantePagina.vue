@@ -1,6 +1,6 @@
 <template>
     <h1>Pagina estudainte</h1>
-    <Estudiante />
+    <!-- <Estudiante /> -->
 </template>
 
 <script>
