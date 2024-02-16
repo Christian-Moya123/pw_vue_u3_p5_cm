@@ -1,6 +1,8 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <EstudiantePagina msg="Welcome to Your Vue.js App" />
+  <router-view/>
+  <h1>todos los derechos reservados</h1>
 </template>
 
 <script>

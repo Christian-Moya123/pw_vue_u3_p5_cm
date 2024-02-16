@@ -34,21 +34,11 @@
 
     </div>
 
-    <div class="insertar">
-        <input v-model="nombre" type="text" placeholder="Nombre" />
-        <input v-model="apellido" type="text" placeholder="Apellido" />
-        <input v-model="fechaNacimiento" type="date" placeholder="Fecha de nacimiento" />
-        <input v-model="genero" type="text" placeholder="Género" />
-        <input v-model="email" type="email" placeholder="Email" />
-        <input v-model="carrera" type="text" placeholder="Carrera" />
-        <input v-model="promedio" type="number" step="0.01" placeholder="Promedio" />
-        <input v-model="direccion" type="text" placeholder="Dirección" />
-        <input v-model="telefono" type="tel" placeholder="Teléfono" />
-        <button @click="insertar">Insertar</button>
+
         <button @click="actualizar">Actualizar</button>
         <button @click="eliminar">Eliminar</button>
 
-    </div>
+    
 </template>
 
 <script>
