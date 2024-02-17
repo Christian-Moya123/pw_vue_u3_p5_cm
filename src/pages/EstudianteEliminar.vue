@@ -8,6 +8,10 @@
 import { eliminarFachada } from "../helpers/clienteEstudiante"
 
 export default {
+    created() {
+        console.log(this.$route)
+        console.log(this.$route.params.id)
+    },
     data() {
         return {
             id: null,
