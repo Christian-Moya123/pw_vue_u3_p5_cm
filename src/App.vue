@@ -1,17 +1,20 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-<EstudiantePagina  /> 
-  <router-view/>
+  <NavBar/>
+  <EstudiantePagina />
+  <router-view />
   <h1>todos los derechos reservados</h1>
 </template>
 
 <script>
 import EstudiantePagina from './pages/EstudiantePagina.vue'
+import NavBar from './components/NavBar.vue'
 
 export default {
   name: 'App',
   components: {
-    EstudiantePagina
+    EstudiantePagina,
+    NavBar
   }
 }
 </script>
